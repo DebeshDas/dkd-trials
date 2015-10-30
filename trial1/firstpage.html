@@ -3,52 +3,34 @@
 <head>
     <meta charset="utf-8" />
     <title>First Page in dkd-trials</title>
+
+    <!-- leaflet.js javascript files -->
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.css" />
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.js"></script>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <p>Welcome to GitHub, hope you really create some stuff</p>
-    <div id="map" style="height: 600px; width: 1000px"></div>
-
-    <script src="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.js"></script>
-    <script>
-
-        var map = L.map('map').setView([51.505, -0.09], 13);
-
-        L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6IjZjNmRjNzk3ZmE2MTcwOTEwMGY0MzU3YjUzOWFmNWZhIn0.Y8bhBaUMqFiPrDRW9hieoQ', {
-            maxZoom: 18,
-            attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
-				'<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-				'Imagery © <a href="http://mapbox.com">Mapbox</a>',
-            id: 'mapbox.streets'
-        }).addTo(map);
-
-
-        L.marker([51.5, -0.09]).addTo(map)
-			.bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
-
-        L.circle([51.508, -0.11], 500, {
-            color: 'red',
-            fillColor: '#f03',
-            fillOpacity: 0.5
-        }).addTo(map).bindPopup("I am a circle.");
-
-        L.polygon([
-			[51.509, -0.08],
-			[51.503, -0.06],
-			[51.51, -0.047]
-        ]).addTo(map).bindPopup("I am a polygon.");
-
-
-        var popup = L.popup();
-
-        function onMapClick(e) {
-            popup
-				.setLatLng(e.latlng)
-				.setContent("You clicked the map at " + e.latlng.toString())
-				.openOn(map);
-        }
-
-        map.on('click', onMapClick);
-    </script>
+    <div class="container-fluid">
+        <div class="col-xl-12">
+            <h3>Leaflet Example <span class="label label-success">Welcome to GitHub, hope you really create some stuff</span></h3>
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Leaflet Example</h3>
+                </div>
+                <div id="map" class="panel-body" style="height:500px">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Custom javascript file that uses the leaflet.js file -->
+    <script type="text/javascript" src="file://C:\Personal\Projects\VisualStudio\leaflet\myfirstpage.js"></script>
 </body>
 </html>
